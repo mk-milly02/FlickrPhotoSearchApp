@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoApp.UI", "PhotoApp.UI\PhotoApp.UI.csproj", "{91463344-12D7-43B7-B77D-EE8ED97CE394}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoApp.Domain", "PhotoApp.Domain\PhotoApp.Domain.csproj", "{98AD9B0D-BA9C-47CD-B9F4-792526621D37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoApp.Domain.Tests", "PhotoApp.Domain.Tests\PhotoApp.Domain.Tests.csproj", "{E281486A-D500-43AA-A641-59EAD034ADE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{91463344-12D7-43B7-B77D-EE8ED97CE394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91463344-12D7-43B7-B77D-EE8ED97CE394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91463344-12D7-43B7-B77D-EE8ED97CE394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98AD9B0D-BA9C-47CD-B9F4-792526621D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98AD9B0D-BA9C-47CD-B9F4-792526621D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98AD9B0D-BA9C-47CD-B9F4-792526621D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98AD9B0D-BA9C-47CD-B9F4-792526621D37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E281486A-D500-43AA-A641-59EAD034ADE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E281486A-D500-43AA-A641-59EAD034ADE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E281486A-D500-43AA-A641-59EAD034ADE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E281486A-D500-43AA-A641-59EAD034ADE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

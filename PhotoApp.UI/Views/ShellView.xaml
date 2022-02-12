@@ -5,14 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoApp.UI.Views" 
         xmlns:viewmodels="clr-namespace:PhotoApp.UI.ViewModels" 
+        xmlns:fc="http://devpelux.github.io/fullcontrols"
         d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="Flickr Photo Search" Height="600" Width="1000">
     
     <Grid>
-        
-        
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="0 0 0 0.5" BorderBrush="Black">
+
+            <StackPanel Orientation="Horizontal">
+
+                <TextBlock VerticalAlignment="Center" Margin="40 0 0 0" FontSize="22" FontFamily="Cascadia Mono">
+                    <Run Text="Flickr" /> 
+                    <Run Text="Photo" /> 
+                    <Run Text="Search" />
+                </TextBlock>
+
+                <fc:TextBoxPlus Height="35" Width="350" CornerRadius="6" Margin="200 0 0 0" 
+                                Hint="Find an amazing photo" FontSize="15" FontFamily="Cascadia Mono"
+                                Padding="10 0 0 0"/>
+
+                <Button Content="Search" Margin="5 0 0 0" />
+
+            </StackPanel>
+
+        </Border>
+
     </Grid>
     
 </Window>

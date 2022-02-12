@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Caliburn.Micro" Version="4.0.173" />
+    <PackageReference Include="FullControls" Version="1.5.1" />
   </ItemGroup>
 
 </Project>

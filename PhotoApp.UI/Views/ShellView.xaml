@@ -17,7 +17,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Border BorderThickness="0 0 0 0.5" BorderBrush="Black">
+        <Border BorderThickness="0 0 0 0.5" BorderBrush="Black" Background="#F9F9FA">
 
             <StackPanel Orientation="Horizontal">
 
@@ -29,7 +29,7 @@
 
                 <fc:TextBoxPlus Height="35" Width="350" CornerRadius="6" Margin="200 0 0 0" 
                                 Hint="Find an amazing photo" FontSize="15" FontFamily="Cascadia Mono"
-                                Padding="10 0 0 0"/>
+                                Padding="10 0 0 0" BorderThickness="0.5" FontWeight="Thin"/>
 
                 <Button Style="{DynamicResource SearchButtonStyle}" Content="Search" Margin="5 0 0 0" />
 

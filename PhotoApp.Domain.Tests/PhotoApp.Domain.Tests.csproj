@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PhotoApp.Domain\PhotoApp.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

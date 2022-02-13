@@ -17,25 +17,54 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!--Header-->
         <Border BorderThickness="0 0 0 0.5" BorderBrush="Black" Background="#F9F9FA">
 
             <StackPanel Orientation="Horizontal">
 
+                <!--Label-->
                 <TextBlock VerticalAlignment="Center" Margin="40 0 0 0" FontSize="22" FontFamily="Cascadia Mono">
                     <Run Text="Flickr" /> 
                     <Run Text="Photo" /> 
                     <Run Text="Search" />
                 </TextBlock>
 
+                <!--Search Bar-->
                 <fc:TextBoxPlus Height="35" Width="350" CornerRadius="6" Margin="200 0 0 0" 
-                                Hint="Find an amazing photo" FontSize="15" FontFamily="Cascadia Mono"
+                                Hint="Find an amazing photo" FontSize="14" FontFamily="Cascadia Mono"
                                 Padding="10 0 0 0" BorderThickness="0.5" FontWeight="Thin"/>
 
+                <!--Search Button-->
                 <Button Style="{DynamicResource SearchButtonStyle}" Content="Search" Margin="5 0 0 0" />
 
             </StackPanel>
 
         </Border>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Photos-->
+            <StackPanel>
+
+                <TextBlock Text="Photos" FontSize="17" FontFamily="Cascadia Mono" FontWeight="Bold" 
+                           Margin="10 10 0 0" />
+
+            </StackPanel>
+
+            <!--Tweets-->
+            <StackPanel Grid.Column="1">
+
+                <TextBlock Text="Tweets" FontSize="17" FontFamily="Cascadia Mono" FontWeight="Bold" 
+                           Margin="10 10 0 0" />
+
+            </StackPanel>
+
+        </Grid>
 
     </Grid>
     

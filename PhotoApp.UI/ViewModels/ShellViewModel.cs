@@ -13,5 +13,30 @@ namespace PhotoApp.UI.ViewModels
         {
 
         }
+
+        #region Properties
+
+        private string keyword;
+
+        public string Keyword
+        {
+            get { return keyword; }
+            set 
+            {
+                keyword = value;
+                NotifyOfPropertyChange(() => Keyword);
+            }
+        }
+
+        #endregion
+
+        #region Commands
+
+        public async Task SearchAsync()
+        {
+
+        }
+
+        #endregion
     }
 }

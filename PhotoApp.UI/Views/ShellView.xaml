@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PhotoApp.UI.Views" 
         xmlns:viewmodels="clr-namespace:PhotoApp.UI.ViewModels" 
         xmlns:fc="http://devpelux.github.io/fullcontrols"
+        xmlns:cc="clr-namespace:PhotoApp.UI.CustomControls"
         d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Title="Flickr Photo Search" Height="600" Width="1000">
@@ -20,6 +21,7 @@
         <!--Header-->
         <Border BorderThickness="0 0 0 0.5" BorderBrush="Black" Background="#F9F9FA">
 
+            <!--Header-->
             <StackPanel Orientation="Horizontal">
 
                 <!--Label-->
@@ -58,6 +60,8 @@
                 
                 <!--Title-->
                 <TextBlock x:Name="FeedTitle" Margin="10 0 0 0" FontFamily="Cascadia Mono" FontWeight="Thin" />
+
+                <cc:PhotoElement />
 
             </StackPanel>
 

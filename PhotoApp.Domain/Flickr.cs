@@ -15,9 +15,11 @@ namespace PhotoApp.Domain
 
             var response = await client.GetStringAsync(uri);
 
-            string responseBody = response.Substring(response.IndexOf("("), response.Length - 1);
+            string responseBody = response[response.IndexOf("{")..];
 
-            Feed feed = JsonConvert.DeserializeObject<Feed>(response);
+            string feedText = responseBody.Remove(responseBody.LastIndexOf(")"));
+
+            Feed feed = JsonConvert.DeserializeObject<Feed>(feedText);
 
             return feed;
         }

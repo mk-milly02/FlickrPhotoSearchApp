@@ -9,10 +9,7 @@ namespace PhotoApp.UI.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        public ShellViewModel()
-        {
-
-        }
+        public ShellViewModel() { }
 
         #region Properties
 

@@ -30,12 +30,13 @@
                 </TextBlock>
 
                 <!--Search Bar-->
-                <fc:TextBoxPlus Height="35" Width="350" CornerRadius="6" Margin="200 0 0 0" 
+                <fc:TextBoxPlus x:Name="Keyword" Height="35" Width="350" CornerRadius="6" Margin="200 0 0 0" 
                                 Hint="Find an amazing photo" FontSize="14" FontFamily="Cascadia Mono"
                                 Padding="10 0 0 0" BorderThickness="0.5" FontWeight="Thin"/>
 
                 <!--Search Button-->
-                <Button Style="{DynamicResource SearchButtonStyle}" Content="Search" Margin="5 0 0 0" />
+                <Button x:Name="SearchAsync" Style="{DynamicResource SearchButtonStyle}" Content="Search" 
+                        Margin="5 0 0 0" />
 
             </StackPanel>
 
@@ -51,8 +52,12 @@
             <!--Photos-->
             <StackPanel>
 
+                <!--Photos Label-->
                 <TextBlock Text="Photos" FontSize="17" FontFamily="Cascadia Mono" FontWeight="Bold" 
                            Margin="10 10 0 0" />
+                
+                <!--Title-->
+                <TextBlock x:Name="FeedTitle" Margin="10 0 0 0" FontFamily="Cascadia Mono" FontWeight="Thin" />
 
             </StackPanel>
 

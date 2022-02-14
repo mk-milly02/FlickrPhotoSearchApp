@@ -14,5 +14,13 @@ namespace PhotoApp.Domain.Tests
 
             Assert.Equal(link, output.Link);
         }
+
+        [Fact]
+        public async Task ShouldPassValid_PhotosCount()
+        {
+            var output = await Flickr.GetFeedAsync("nature");
+
+            Assert.True(output.Photos.Length > 0);
+        }
     }
 }

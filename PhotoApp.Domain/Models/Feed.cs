@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace PhotoApp.Domain.Models
@@ -15,6 +16,7 @@ namespace PhotoApp.Domain.Models
 
         public string Generator { get; set; }
 
-        public List<Photo> Photos { get; set; }
+        [JsonProperty("items")]
+        public Photo[] Photos { get; set; }
     }
 }

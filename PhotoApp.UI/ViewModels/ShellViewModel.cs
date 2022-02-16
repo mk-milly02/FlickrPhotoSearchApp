@@ -1,10 +1,8 @@
 ﻿using Caliburn.Micro;
 using PhotoApp.Domain;
 using PhotoApp.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using PhotoApp.UI.CustomControls;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace PhotoApp.UI.ViewModels
@@ -57,6 +55,18 @@ namespace PhotoApp.UI.ViewModels
             }
         }
 
+        private ObservableCollection<PhotoElement> photos;
+
+        public ObservableCollection<PhotoElement> Photos
+        {
+            get { return photos; }
+            set 
+            {
+                photos = value;
+                NotifyOfPropertyChange(() => Photos);
+            }
+        }
+
         #endregion
 
         #region Commands
@@ -65,6 +75,14 @@ namespace PhotoApp.UI.ViewModels
         {
             FlickrFeed = await Flickr.GetFeedAsync(Keyword);
             FeedTitle = FlickrFeed.Title;
+
+            Photos = new();
+
+            foreach (var item in FlickrFeed.Photos)
+            {
+                PhotoElement photo = new(item);
+                Photos.Add(photo);
+            }
         }
 
         #endregion

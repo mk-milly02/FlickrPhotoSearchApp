@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PhotoApp.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,10 +47,62 @@ namespace PhotoApp.UI.CustomControls
     /// </summary>
     public class PhotoElement : Control
     {
+        public PhotoElement(Photo photo)
+        {
+            Title = photo.Title;
+            Published = photo.Published.ToShortDateString();
+            Time = photo.Published.ToShortTimeString();
+            ImageSource = photo.Media.M;
+        }
+
         static PhotoElement()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PhotoElement), 
                 new FrameworkPropertyMetadata(typeof(PhotoElement)));
         }
+
+        #region Properties
+
+        public string ImageSource
+        {
+            get { return (string)GetValue(ImageSourceProperty); }
+            set { SetValue(ImageSourceProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ImageSource.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ImageSourceProperty =
+            DependencyProperty.Register("ImageSource", typeof(string), typeof(PhotoElement));
+
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TitleProperty =
+            DependencyProperty.Register("Title", typeof(string), typeof(PhotoElement));
+
+        public string Published
+        {
+            get { return (string)GetValue(PublishedProperty); }
+            set { SetValue(PublishedProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Published.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PublishedProperty =
+            DependencyProperty.Register("Published", typeof(string), typeof(PhotoElement));
+
+        public string Time
+        {
+            get { return (string)GetValue(TimeProperty); }
+            set { SetValue(TimeProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Time.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TimeProperty =
+            DependencyProperty.Register("Time", typeof(string), typeof(PhotoElement));
+
+        #endregion
     }
 }

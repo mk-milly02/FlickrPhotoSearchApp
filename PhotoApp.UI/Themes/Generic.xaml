@@ -9,6 +9,7 @@
         <Setter Property="Height" Value="250" />
         <Setter Property="Width" Value="200" />
         <Setter Property="Background" Value="WhiteSmoke" />
+        <Setter Property="Margin" Value="30 0 0 20" />
 
         <Setter Property="Template">
             
@@ -26,18 +27,22 @@
                             <Border Height="150" CornerRadius="7 7 0 0">
 
                                 <Border.Background>
-                                    <ImageBrush ImageSource="C:\Users\jonas\OneDrive\Desktop\Programming\C#\Projects\PhotoApp\PhotoApp.UI\5bd4bcd96b56c54f6d6c7ecec935e615.jpg"
-                                                Stretch="UniformToFill"/>
+
+                                    <ImageBrush ImageSource="{TemplateBinding ImageSource}" />
+
                                 </Border.Background>
-                                
+
                             </Border>
 
-                            <TextBlock Text="Title" FontFamily="Cascadia Mono" FontWeight="Thin" Margin="10 10 -10 0" />
-                            <TextBlock Text="Published" FontFamily="Cascadia Mono" FontWeight="Thin" Margin="10 0 -10 0" />
-                            <TextBlock Text="Author" FontFamily="Cascadia Mono" FontWeight="Thin" Margin="10 0 -10 0" />
-                            <TextBlock Text="Description" FontFamily="Cascadia Mono" FontWeight="Thin" Margin="10 0 -10 0"
-                                       TextWrapping="Wrap"/>
-                            
+                            <TextBlock Text="{TemplateBinding Title}" FontFamily="Cascadia Mono" FontWeight="Thin" 
+                                       Margin="10 7 0 0" Foreground="Black" TextWrapping="Wrap" />
+
+                            <TextBlock Text="{TemplateBinding Published}" FontFamily="Cascadia Mono" FontWeight="Thin"
+                                       Margin="10 7 0 0" Foreground="Black" TextWrapping="Wrap" />
+
+                            <TextBlock Text="{TemplateBinding Time}" FontFamily="Cascadia Mono" FontWeight="Thin"
+                                       Margin="10 7 0 0" Foreground="Black" TextWrapping="Wrap" />
+
                         </StackPanel>
 
                     </Border>

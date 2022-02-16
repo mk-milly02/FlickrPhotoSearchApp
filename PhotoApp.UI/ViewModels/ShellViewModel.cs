@@ -73,7 +73,13 @@ namespace PhotoApp.UI.ViewModels
 
         public async Task SearchAsync()
         {
+            await DisplayPhotosAsync();
+        }
+
+        private async Task DisplayPhotosAsync()
+        {
             FlickrFeed = await Flickr.GetFeedAsync(Keyword);
+
             FeedTitle = FlickrFeed.Title;
 
             Photos = new();

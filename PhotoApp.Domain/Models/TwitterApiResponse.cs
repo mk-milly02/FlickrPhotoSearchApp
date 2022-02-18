@@ -1,8 +1,11 @@
-﻿namespace PhotoApp.Domain.Models
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace PhotoApp.Domain.Models
 {
     public class TwitterApiResponse
     {
-        public Tweet[] Tweets { get; set; }
+        public List<Tweet> data { get; set; }
 
         public Includes Includes { get; set; }
 

@@ -55,4 +55,55 @@
         
     </Style>
     
+
+    <Style TargetType="{x:Type cc:TweetElement}">
+
+        <Setter Property="Width" Value="400" />
+        <Setter Property="Background" Value="WhiteSmoke" />
+        <Setter Property="Margin" Value="0 15 0 0" />
+
+        <Setter Property="Template">
+            
+            <Setter.Value>
+                
+                <ControlTemplate TargetType="{x:Type cc:TweetElement}">
+                    
+                    <Border Background="{TemplateBinding Background}" CornerRadius="7"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <StackPanel>
+
+                            <TextBlock Text="My name is Jonas Nii Armah Ababio. I'm .... years of age. I love to develop desktop applications using WPF with C#..............."
+                                       TextWrapping="Wrap" Margin="15 15 15 0" FontFamily="Cascadia mono" FontWeight="Thin" Foreground="Gray"
+                                       />
+
+                            <Grid Margin="15 5 15 15">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="mk-milly02468" FontFamily="Cascadia mono" 
+                                           Foreground="RoyalBlue" FontWeight="Light" VerticalAlignment="Center" />
+
+                                <TextBlock Grid.Column="1" Text="@mk-milly02" FontFamily="Cascadia mono" 
+                                           Foreground="BlueViolet" FontWeight="Light" HorizontalAlignment="Right"
+                                           VerticalAlignment="Center"/>
+
+                            </Grid>
+
+                        </StackPanel>
+                        
+                    </Border>
+                    
+                </ControlTemplate>
+                
+            </Setter.Value>
+            
+        </Setter>
+        
+    </Style>
+    
 </ResourceDictionary>

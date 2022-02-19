@@ -21,7 +21,6 @@
         <!--Header-->
         <Border BorderThickness="0 0 0 0.5" BorderBrush="Black" Background="#F9F9FA">
 
-            <!--Header-->
             <StackPanel Orientation="Horizontal">
 
                 <!--Label-->
@@ -91,14 +90,37 @@
             </Grid>
 
             <!--Tweets-->
-            <StackPanel Grid.Column="1">
+            <Grid Grid.Column="1">
 
-                <TextBlock Text="Tweets" FontSize="17" FontFamily="Cascadia Mono" FontWeight="Bold" 
-                           Margin="10 10 0 0" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-                <Image Source="{Binding Image}" Height="200" Width="200" />
+                <StackPanel>
 
-            </StackPanel>
+                    <!--Tweets Label-->
+                    <TextBlock Text="Tweets" FontSize="17" FontFamily="Cascadia Mono" FontWeight="Bold" 
+                               Margin="10 10 0 0" />
+
+                    <!--Results-->
+                    <TextBlock Text="Results (60)" Margin="10 0 0 0" FontFamily="Cascadia Mono" FontWeight="Thin" />
+
+                </StackPanel>
+
+                <fc:GlassScrollViewer Grid.Row="1">
+
+                    <StackPanel>
+
+                        <cc:TweetElement />
+                        <cc:TweetElement />
+                        <cc:TweetElement />
+
+                    </StackPanel>
+
+                </fc:GlassScrollViewer>
+
+            </Grid>
 
         </Grid>
 

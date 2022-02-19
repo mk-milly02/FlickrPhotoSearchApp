@@ -51,5 +51,39 @@ namespace PhotoApp.UI.CustomControls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TweetElement), 
                 new FrameworkPropertyMetadata(typeof(TweetElement)));
         }
+
+        #region Properties
+
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TextProperty =
+            DependencyProperty.Register("Text", typeof(string), typeof(TweetElement));
+
+        public string AuthorName
+        {
+            get { return (string)GetValue(AuthorNameProperty); }
+            set { SetValue(AuthorNameProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Name.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty AuthorNameProperty =
+            DependencyProperty.Register("AuthorName", typeof(string), typeof(TweetElement));
+
+        public string Username
+        {
+            get { return (string)GetValue(UsernameProperty); }
+            set { SetValue(UsernameProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Username.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty UsernameProperty =
+            DependencyProperty.Register("Username", typeof(string), typeof(TweetElement));
+
+        #endregion
     }
 }

@@ -74,9 +74,8 @@
 
                         <StackPanel>
 
-                            <TextBlock Text="My name is Jonas Nii Armah Ababio. I'm .... years of age. I love to develop desktop applications using WPF with C#..............."
-                                       TextWrapping="Wrap" Margin="15 15 15 0" FontFamily="Cascadia mono" FontWeight="Thin" Foreground="Gray"
-                                       />
+                            <TextBlock Text="{TemplateBinding Text}" TextWrapping="Wrap" Margin="15 15 15 0" 
+                                       FontFamily="Cascadia mono" FontWeight="Thin" Foreground="Gray"/>
 
                             <Grid Margin="15 5 15 15">
 
@@ -85,10 +84,10 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="mk-milly02468" FontFamily="Cascadia mono" 
+                                <TextBlock Text="{TemplateBinding Name}" FontFamily="Cascadia mono" 
                                            Foreground="RoyalBlue" FontWeight="Light" VerticalAlignment="Center" />
 
-                                <TextBlock Grid.Column="1" Text="@mk-milly02" FontFamily="Cascadia mono" 
+                                <TextBlock Grid.Column="1" Text="{TemplateBinding Username}" FontFamily="Cascadia mono" 
                                            Foreground="BlueViolet" FontWeight="Light" HorizontalAlignment="Right"
                                            VerticalAlignment="Center"/>
 

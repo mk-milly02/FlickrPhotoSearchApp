@@ -5,6 +5,7 @@ using PhotoApp.UI.CustomControls;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Windows.Input;
 
 namespace PhotoApp.UI.ViewModels
 {
@@ -123,6 +124,14 @@ namespace PhotoApp.UI.ViewModels
             {
                 TweetElement tweet = new(item, GetUser(item.AuthorId));
                 Tweets.Add(tweet);
+            }
+        }
+
+        public async void HandleInput(KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                await SearchAsync();
             }
         }
 

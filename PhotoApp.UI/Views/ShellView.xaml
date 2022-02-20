@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoApp.UI.Views" 
         xmlns:viewmodels="clr-namespace:PhotoApp.UI.ViewModels" 
+        xmlns:cal="http://www.caliburnproject.org"
         xmlns:fc="http://devpelux.github.io/fullcontrols"
         d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
@@ -33,7 +34,8 @@
                 <!--Search Bar-->
                 <fc:TextBoxPlus x:Name="Keyword" Height="35" Width="350" CornerRadius="6" Margin="200 0 0 0" 
                                 Hint="Find an amazing photo" FontSize="14" FontFamily="Cascadia Mono"
-                                Padding="10 0 0 0" BorderThickness="0.5" FontWeight="Thin"/>
+                                Padding="10 0 0 0" BorderThickness="0.5" FontWeight="Thin"
+                                cal:Message.Attach="[Event KeyDown] = [Action HandleInput($eventArgs)]"/>
 
                 <!--Search Button-->
                 <Button x:Name="SearchAsync" Style="{DynamicResource SearchButtonStyle}" Content="Search" 

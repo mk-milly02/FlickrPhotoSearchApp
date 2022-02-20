@@ -1,16 +1,16 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace PhotoApp.Domain
 {
     public class Tweet
     {
-        [JsonPropertyName("author_id")]
+        [JsonProperty("author_id")]
         public string AuthorId { get; set; }
 
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonPropertyName("text")]
+        [JsonProperty("text")]
         public string Text { get; set; }
 
     }

@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:PhotoApp.UI.Views" 
         xmlns:viewmodels="clr-namespace:PhotoApp.UI.ViewModels" 
         xmlns:fc="http://devpelux.github.io/fullcontrols"
-        xmlns:cc="clr-namespace:PhotoApp.UI.CustomControls"
         d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Title="Flickr Photo Search" Height="600" Width="1000"
@@ -111,7 +110,15 @@
 
                 <fc:GlassScrollViewer Grid.Row="1">
 
-                    
+                    <ItemsControl ItemsSource="{Binding Tweets}">
+
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Margin="10" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        
+                    </ItemsControl>
 
                 </fc:GlassScrollViewer>
 

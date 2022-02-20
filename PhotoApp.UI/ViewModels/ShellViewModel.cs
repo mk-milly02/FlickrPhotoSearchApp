@@ -4,6 +4,7 @@ using PhotoApp.Domain.Models;
 using PhotoApp.UI.CustomControls;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace PhotoApp.UI.ViewModels
 {
@@ -67,6 +68,20 @@ namespace PhotoApp.UI.ViewModels
             }
         }
 
+        public TwitterApiResponse Response { get; set; }
+
+        private ObservableCollection<TweetElement> tweets;
+
+        public ObservableCollection<TweetElement> Tweets
+        {
+            get { return tweets; }
+            set 
+            {
+                tweets = value;
+                NotifyOfPropertyChange(() => Tweets); 
+            }
+        }
+
         #endregion
 
         #region Commands
@@ -74,6 +89,8 @@ namespace PhotoApp.UI.ViewModels
         public async Task SearchAsync()
         {
             await DisplayPhotosAsync();
+
+            await DisplayTweetsAsync();
         }
 
         private async Task DisplayPhotosAsync()
@@ -88,6 +105,24 @@ namespace PhotoApp.UI.ViewModels
             {
                 PhotoElement photo = new(item);
                 Photos.Add(photo);
+            }
+        }
+
+        private User GetUser(string authorId)
+        {
+            return Response.Includes.Users.Where(user => user.Id.Equals(authorId)).FirstOrDefault();
+        }
+
+        private async Task DisplayTweetsAsync()
+        {
+            Response = await Twitter.GetTweetsAsync(Keyword);
+
+            Tweets = new();
+
+            foreach (var item in Response.Tweets)
+            {
+                TweetElement tweet = new(item, GetUser(item.AuthorId));
+                Tweets.Add(tweet);
             }
         }
 

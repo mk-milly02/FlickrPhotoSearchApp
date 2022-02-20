@@ -20,7 +20,7 @@ namespace PhotoApp.Domain
 
         public static async Task<TwitterApiResponse> GetTweetsAsync(string search)
         {
-            string uri = $"https://api.twitter.com/2/tweets/search/recent?max_results=60&expansions=author_id&user.fields=created_at,description&query={search}";
+            string uri = $"https://api.twitter.com/2/tweets/search/recent?max_results=60&tweet.fields=author_id&expansions=author_id&user.fields=id,name,username&query={search}";
             
             HttpClient client = new();
 

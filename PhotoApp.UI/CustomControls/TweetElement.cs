@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PhotoApp.Domain;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PhotoApp.UI.CustomControls
 {
@@ -46,6 +35,13 @@ namespace PhotoApp.UI.CustomControls
     /// </summary>
     public class TweetElement : Control
     {
+        public TweetElement(Tweet tweet, User user)
+        {
+            Text = tweet.Text;
+            AuthorName = user.Name;
+            Username = "@"+user.Username;
+        }
+
         static TweetElement()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TweetElement), 

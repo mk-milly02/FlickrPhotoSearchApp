@@ -24,9 +24,17 @@ namespace PhotoApp.Domain.Tests
 
             var response = await Twitter.GetTweetsAsync("nature");
 
-            int actual = response.data.Count;
+            int actual = response.Tweets.Count;
 
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public async Task ReturnIsNotNullForAuthorId()
+        {
+            var response = await Twitter.GetTweetsAsync("nature");
+
+            Assert.NotNull(response.Tweets[0].AuthorId);
         }
     }
 }

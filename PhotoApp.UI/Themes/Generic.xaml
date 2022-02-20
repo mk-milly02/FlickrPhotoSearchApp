@@ -84,7 +84,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="{TemplateBinding Name}" FontFamily="Cascadia mono" 
+                                <TextBlock Text="{TemplateBinding AuthorName}" FontFamily="Cascadia mono" 
                                            Foreground="RoyalBlue" FontWeight="Light" VerticalAlignment="Center" />
 
                                 <TextBlock Grid.Column="1" Text="{TemplateBinding Username}" FontFamily="Cascadia mono" 

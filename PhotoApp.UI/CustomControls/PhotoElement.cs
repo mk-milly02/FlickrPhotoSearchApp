@@ -40,7 +40,7 @@ namespace PhotoApp.UI.CustomControls
             Title = photo.Title;
             Published = photo.Published.ToShortDateString();
             Time = photo.Published.ToShortTimeString();
-            ImageSource = photo.Media.M;
+            Image = photo.Media.M;
         }
 
         static PhotoElement()
@@ -51,15 +51,15 @@ namespace PhotoApp.UI.CustomControls
 
         #region Properties
 
-        public string ImageSource
+        public string Image
         {
-            get { return (string)GetValue(ImageSourceProperty); }
-            set { SetValue(ImageSourceProperty, value); }
+            get { return (string)GetValue(ImageProperty); }
+            set { SetValue(ImageProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for ImageSource.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ImageSourceProperty =
-            DependencyProperty.Register("ImageSource", typeof(string), typeof(PhotoElement));
+        public static readonly DependencyProperty ImageProperty =
+            DependencyProperty.Register("Image", typeof(string), typeof(PhotoElement));
 
         public string Title
         {
